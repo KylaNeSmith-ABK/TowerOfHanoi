@@ -7,10 +7,15 @@ static int Count = 0;
 
 int main()
 {
-	TowerOfHanoi* ToH = new TowerOfHanoi(5);
+	TowerOfHanoiText(3, 'A', 'C', 'B');
+	std::cout << std::endl;
+
+
+	TowerOfHanoi* ToH = new TowerOfHanoi(3);
 	ToH->Solve();
 }
 
+// from https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/
 void TowerOfHanoiText(int diskNum, char origin, char destination, char auxiliary)
 {
 	if (diskNum == 0)

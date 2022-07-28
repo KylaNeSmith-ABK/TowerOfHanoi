@@ -15,17 +15,24 @@ Disk* Disk::GetDiskUnder()
 	return UnderDisk;
 }
 
+void Disk::RemoveFromDiskUnder()
+{
+	UnderDisk = nullptr;
+}
+
+Disk* Disk::Lift()
+{
+	Disk* temp = UnderDisk;
+	UnderDisk = nullptr;
+	return temp;
+}
+
 void Disk::PrintDisk()
 {
 	std::cout << Size;
 }
 
-bool operator<(Disk& diskA, Disk& diskB)
+bool operator<(const Disk& diskA, const Disk& diskB)
 {
-	if (diskA.Size < diskB.Size)
-	{
-		return true;
-	}
-
-	return false;
+	return diskA.Size < diskB.Size;
 }

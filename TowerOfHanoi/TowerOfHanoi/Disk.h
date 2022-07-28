@@ -12,8 +12,12 @@ public:
 
 	void const PlaceOnto(Disk* disk);
 	Disk* GetDiskUnder();
+	void RemoveFromDiskUnder();
+
+	// returns and resets the UnderDisk
+	Disk* Lift();
 
 	void PrintDisk();
 
-	friend bool operator< (Disk& diskA, Disk& diskB);
+	friend bool operator< (const Disk& diskA, const Disk& diskB);
 };

@@ -22,7 +22,14 @@ void Tower::FillTower()
 
 void Tower::PlaceDisk(Disk* disk)
 {
-	if (TopDisk)
+	// put in to test behavior
+	// should never print this
+	if (TopDisk && (*TopDisk < *disk))
+	{
+		std::cout << "ERROR! Cannot put larger Disk on smaller Disk!" << std::endl;
+	}
+
+	if (TopDisk != nullptr)
 	{
 		disk->PlaceOnto(TopDisk);
 	}
@@ -36,7 +43,7 @@ Disk* Tower::RemoveTopDisk()
 	if (TopDisk)
 	{
 		Disk* temp = TopDisk;
-		TopDisk = TopDisk->GetDiskUnder();
+		TopDisk = TopDisk->Lift();
 		CurrentSize--;
 		return temp;
 	}

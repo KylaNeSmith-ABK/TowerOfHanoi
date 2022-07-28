@@ -33,9 +33,15 @@ void TowerOfHanoi::SolveHelper(int numOfDisks, Tower* origin, Tower* destination
 	SolveHelper(numOfDisks - 1, origin, auxiliary, destination);
 
 	Disk* temp = origin->RemoveTopDisk();
-	if (temp)
+	if (temp != nullptr)
 	{
 		destination->PlaceDisk(temp);
+	}
+	else
+	{
+		// put in to test behavior
+		// should never print this
+		std::cout << "ERROR! Handling null Disk!" << std::endl;
 	}
 	
 	Counter++;
