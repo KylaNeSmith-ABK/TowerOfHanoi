@@ -8,10 +8,11 @@ static int Count = 0;
 int main()
 {
 	TowerOfHanoiText(3, 'A', 'C', 'B');
-	std::cout << std::endl;
+
+	printf("\n");
 
 
-	TowerOfHanoi* ToH = new TowerOfHanoi(20);
+	TowerOfHanoi* ToH = new TowerOfHanoi(16);
 	ToH->Solve();
 
 	delete ToH;
@@ -26,6 +27,6 @@ void TowerOfHanoiText(int diskNum, char origin, char destination, char auxiliary
 		return;
 	}
 	TowerOfHanoiText(diskNum - 1, origin, auxiliary, destination);
-	std::cout << "Move disk #" << diskNum << " from " << origin << " to " << destination << std::endl;
+	printf("Move disk #%i from %c to %c\n", diskNum, origin, destination);
 	TowerOfHanoiText(diskNum - 1, auxiliary, destination, origin);
 }

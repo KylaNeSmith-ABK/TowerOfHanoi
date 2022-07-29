@@ -33,7 +33,8 @@ Disk* Disk::Lift()
 
 void Disk::PrintDisk()
 {
-	std::cout << Size;
+	printf("%i", Size);
+
 }
 
 bool operator<(const Disk& diskA, const Disk& diskB)

@@ -27,11 +27,11 @@ void Tower::FillTower()
 
 void Tower::EmptyTower()
 {
-	// for checking that towers that should be empty actually were
-	/*if (!TopDisk)
-	{
-		std::cout << "Tower " << TowerName << " was empty" << std::endl;
-	}*/
+	//// for checking that towers that should be empty actually were
+	//if (!TopDisk)
+	//{
+	//	printf("Tower %s was empty", TowerName.c_str());
+	//}
 	while (TopDisk)
 	{
 		Disk* temp = TopDisk->Lift();
@@ -48,7 +48,7 @@ void Tower::PlaceDisk(Disk* disk)
 	// should never print this
 	if (TopDisk && (*TopDisk < *disk))
 	{
-		std::cout << "ERROR! Cannot put larger Disk on smaller Disk!" << std::endl;
+		printf("ERROR! Cannot put larger Disk on smaller Disk!");
 	}
 
 	if (TopDisk != nullptr)
@@ -75,20 +75,20 @@ Disk* Tower::RemoveTopDisk()
 
 void Tower::PrintTower()
 {
-	std::cout << TowerName << ": ";
+	printf("%s: ", TowerName.c_str());
 	Disk* temp = TopDisk;
 
 	for (int i = 0; i < FullSize; i++)
 	{
 		if (temp && (i >= FullSize - CurrentSize))
 		{
-			std::cout << " ";
+			printf(" ");
 			temp->PrintDisk();
 			temp = temp->GetDiskUnder();
 		}
 		else
 		{
-			std::cout << " -";
+			printf(" -");
 		}
 	}
 }

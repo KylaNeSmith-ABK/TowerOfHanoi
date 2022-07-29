@@ -43,13 +43,13 @@ void TowerOfHanoi::Clear()
 void TowerOfHanoi::Print()
 {
 	TowerA->PrintTower();
-	std::cout << std::endl;
+	printf("\n");
 	TowerB->PrintTower();
-	std::cout << std::endl;
+	printf("\n");
 	TowerC->PrintTower();
-	std::cout << std::endl;
-	std::cout << "Count: " << Counter << std::endl;
-	std::cout << std::endl;
+	printf("\n");
+	printf("Count: %i", Counter);
+	printf("\n\n");
 }
 
 void TowerOfHanoi::SolveHelper(int numOfDisks, Tower* origin, Tower* destination, Tower* auxiliary)
@@ -69,7 +69,7 @@ void TowerOfHanoi::SolveHelper(int numOfDisks, Tower* origin, Tower* destination
 	{
 		// put in to test behavior
 		// should never print this
-		std::cout << "ERROR! Handling null Disk!" << std::endl;
+		printf("ERROR! Handling null Disk!");
 	}
 	
 	Counter++;
