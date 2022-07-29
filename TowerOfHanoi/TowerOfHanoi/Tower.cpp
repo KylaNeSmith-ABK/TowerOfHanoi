@@ -6,6 +6,11 @@ Tower::Tower(std::string towerName, int size)
 {
 }
 
+Tower::~Tower()
+{
+	EmptyTower();
+}
+
 void Tower::FillTower()
 {
 	TopDisk = new Disk(FullSize);
@@ -18,6 +23,23 @@ void Tower::FillTower()
 		TopDisk = temp;
 	}
 	CurrentSize = FullSize;
+}
+
+void Tower::EmptyTower()
+{
+	// for checking that towers that should be empty actually were
+	/*if (!TopDisk)
+	{
+		std::cout << "Tower " << TowerName << " was empty" << std::endl;
+	}*/
+	while (TopDisk)
+	{
+		Disk* temp = TopDisk->Lift();
+		delete TopDisk;
+		TopDisk = temp;
+	}
+
+	CurrentSize = 0;
 }
 
 void Tower::PlaceDisk(Disk* disk)

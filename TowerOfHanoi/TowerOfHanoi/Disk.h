@@ -9,6 +9,7 @@ private:
 
 public:
 	Disk(int size);
+	~Disk();
 
 	void const PlaceOnto(Disk* disk);
 	Disk* GetDiskUnder();

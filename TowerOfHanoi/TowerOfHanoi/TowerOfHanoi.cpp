@@ -6,10 +6,38 @@ TowerOfHanoi::TowerOfHanoi(int numofDisks)
 	TowerA->FillTower();
 }
 
+TowerOfHanoi::~TowerOfHanoi()
+{
+	delete TowerA;
+	delete TowerB;
+	delete TowerC;
+}
+
 void TowerOfHanoi::Solve()
 {
+	if (bSolved)
+	{
+		Reset();
+	}
+
 	Print();
 	SolveHelper(NumberOfDisks, TowerA, TowerC, TowerB);
+	bSolved = true;
+}
+
+void TowerOfHanoi::Reset()
+{
+	Clear();
+	TowerA->FillTower();
+}
+
+void TowerOfHanoi::Clear()
+{
+	TowerA->EmptyTower();
+	TowerB->EmptyTower();
+	TowerC->EmptyTower();
+	Counter = 0;
+	bSolved = false;
 }
 
 void TowerOfHanoi::Print()

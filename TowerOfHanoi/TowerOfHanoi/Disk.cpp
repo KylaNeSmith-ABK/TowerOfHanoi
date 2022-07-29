@@ -5,6 +5,10 @@ Disk::Disk(int size)
 {
 }
 
+Disk::~Disk()
+{
+}
+
 void const Disk::PlaceOnto(Disk* disk)
 {
 	UnderDisk = disk;

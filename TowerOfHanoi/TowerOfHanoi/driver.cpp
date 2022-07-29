@@ -11,8 +11,11 @@ int main()
 	std::cout << std::endl;
 
 
-	TowerOfHanoi* ToH = new TowerOfHanoi(3);
+	TowerOfHanoi* ToH = new TowerOfHanoi(20);
 	ToH->Solve();
+
+	delete ToH;
+	ToH = nullptr;
 }
 
 // from https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/

@@ -8,6 +8,7 @@ class TowerOfHanoi
 private:
 	int Counter = 0;
 	int NumberOfDisks = 3;
+	bool bSolved = false;
 
 	Tower* TowerA = new Tower("A", NumberOfDisks);
 	Tower* TowerB = new Tower("B", NumberOfDisks);
@@ -15,8 +16,11 @@ private:
 
 public:
 	TowerOfHanoi(int numofDisks = 3);
+	~TowerOfHanoi();
 
 	void Solve();
+	void Reset();
+	void Clear();
 
 	void Print();
 

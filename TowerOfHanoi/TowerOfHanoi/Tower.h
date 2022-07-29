@@ -13,8 +13,10 @@ private:
 
 public:
 	Tower(std::string towerName,  int size = 3);
+	~Tower();
 
 	void FillTower();
+	void EmptyTower();
 	void PlaceDisk(Disk* disk);
 	Disk* RemoveTopDisk();
 
